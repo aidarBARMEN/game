@@ -1,6 +1,5 @@
 import pygame
 import sys
-import subprocess
 import main
 import importlib
 
@@ -30,6 +29,9 @@ RED = (255, 0, 0)
 pixel_font = pygame.font.Font("fonts/PressStart2P.ttf", 20)  # Здесь указывается путь к файлу шрифта и его размер
 
 font = pygame.font.Font(None, 36)
+# Загрузка и воспроизведение музыки
+pygame.mixer.music.load("music/piala.mp3")
+pygame.mixer.music.play(-1)  # -1 означает, что музыка будет воспроизводиться в цикле
 
 
 # Определение функции для рисования кнопок с текстурой и пиксельным шрифтом

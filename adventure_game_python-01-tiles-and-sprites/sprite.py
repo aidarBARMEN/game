@@ -13,6 +13,7 @@ class Sprite:
             loaded[image] = self.image
         self.x = x
         self.y = y
+        self.rect = self.image.get_rect(topleft=(x, y))
         sprites.append(self)
 
     def delete(self):

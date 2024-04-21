@@ -1,6 +1,5 @@
 import pygame
 import sys
-import subprocess
 import main
 import importlib
 
@@ -14,6 +13,7 @@ pygame.init()
 
 # Установка размеров окна
 SCREEN_WIDTH = 800
+
 SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Main Menu")
@@ -30,6 +30,9 @@ RED = (255, 0, 0)
 pixel_font = pygame.font.Font("fonts/PressStart2P.ttf", 20)  # Здесь указывается путь к файлу шрифта и его размер
 
 font = pygame.font.Font(None, 36)
+# Загрузка и воспроизведение музыки
+pygame.mixer.music.load("music/piala.mp3")
+pygame.mixer.music.play(-1)  # -1 означает, что музыка будет воспроизводиться в цикле
 
 
 # Определение функции для рисования кнопок с текстурой и пиксельным шрифтом
@@ -53,6 +56,7 @@ def main_menu():
         draw_button_texture(screen, "images/texturebutton.png", 300, 400, 200, 50, "Settings", BLACK)
         
         # Проверка событий
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
